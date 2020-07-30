@@ -21,7 +21,25 @@ export default class App extends Vue {
   appCounter = 0;
 
   counterChangeHandler(arg: string): void {
-    console.log("Parent Handler", arg);
+    switch (arg) {
+      case "+":
+        if (this.appCounter < 20) {
+          ++this.appCounter;
+        } else {
+          alert("Max limit reached (20)");
+        }
+        break;
+      case "-":
+        if (this.appCounter !== 0) {
+          --this.appCounter;
+        } else {
+          alert("Min limit reached (0)");
+        }
+        break;
+
+      default:
+        break;
+    }
   }
 }
 </script>
