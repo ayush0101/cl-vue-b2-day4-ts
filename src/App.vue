@@ -16,7 +16,10 @@ import Playground from "./components/Playground.vue";
     Playground,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  //  this will automatically become reactive data property
+  appCounter = 0;
+}
 </script>
 <style>
 </style>
