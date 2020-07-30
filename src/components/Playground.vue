@@ -12,13 +12,14 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { Prop, Emit } from "vue-property-decorator";
 
 @Component
 export default class Playground extends Vue {
   //  Declaring a prop
   @Prop() counter!: number;
 
+  @Emit("change")
   clickHandler(arg: string): void {
     console.log("Handler called", arg);
   }
