@@ -1,13 +1,21 @@
 <template>
-  <h3>This is Playground</h3>
+  <div>
+    <h3>Welcome to counter game!</h3>
+    <hr />
+    <h4>Counter: {{counter}}</h4>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 
 @Component
-export default class Playground extends Vue {}
+export default class Playground extends Vue {
+  //  Declaring a prop
+  @Prop() counter!: number;
+}
 </script>
 
 <style>
