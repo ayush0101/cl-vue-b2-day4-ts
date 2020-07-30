@@ -19,9 +19,9 @@ export default class Playground extends Vue {
   //  Declaring a prop
   @Prop() counter!: number;
 
-  @Emit("change")
-  clickHandler(arg: string): void {
-    console.log("Handler called", arg);
+  @Emit("counter-changed")
+  clickHandler(arg: string): string {
+    return arg;
   }
 }
 </script>

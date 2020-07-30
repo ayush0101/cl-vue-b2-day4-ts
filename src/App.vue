@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <h3>Learning TypeScript Tooling</h3>
-      <Playground :counter="appCounter" />
+      <Playground :counter="appCounter" @counter-changed="counterChangeHandler" />
     </div>
   </div>
 </template>
@@ -19,6 +19,10 @@ import Playground from "./components/Playground.vue";
 export default class App extends Vue {
   //  this will automatically become reactive data property
   appCounter = 0;
+
+  counterChangeHandler(arg: string): void {
+    console.log("Parent Handler", arg);
+  }
 }
 </script>
 <style>
